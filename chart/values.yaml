@@ -1,0 +1,16 @@
+volumes:
+   # Name of PVC and PV
+  - name: #  media
+    # Size of volume
+    size: # 400Gi
+  # Name of storage class
+    storageClassName: # longhorn-large
+    # Name of longhorn pre-created volume
+    volumeHandle: # media-storage
+    # List of volume access modes
+    accessModes: []
+    pv: # Optional, need to specify only if do not want to create pv, by default true
+      enabled: # true
+    
+    pvc: # Optional, need to specify only if do not want to create pv, by default true      
+      enabled: # true

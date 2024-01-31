@@ -1,0 +1,27 @@
+{{- $root := . }}
+{{- range .Values.volumes }}
+{{- if or (not .pv) (.pv.enabled)}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .name  }}
+  labels:
+    app: {{ $root.Release.Name }}
+    version: {{ $root.Chart.AppVersion }}
+    chart: {{ template "storage.chart" $root }}
+    release: {{ template "storage.name" $root }}
+    heritage: {{ $root.Release.Service }}  
+spec:
+  volumeMode: Filesystem
+  accessModes:
+  {{ toYaml .accessModes | nindent 4 }}
+  storageClassName: {{ .storageClassName }}
+  capacity:
+    storage: {{ .size }}
+  csi:
+    driver: driver.longhorn.io
+    fsType: ext4
+    volumeHandle: {{ .volumeHandle  }}
+---    
+{{- end }}
+{{- end }}
