@@ -2,10 +2,10 @@
 
 Helm chart for provisioning storage definition (PersistentVolumeClaim and PersistentVolume objects).
 
-Can be useful in following cases:
+Can be useful in the following cases:
 
 * When you want to separate storage and application management.
-* When you want to bind `PersistenVolume` with already existing  volume handle (for instance manually created [Longhorn](https://longhorn.io/) volume.)
+* When you want to bind `PersistenVolume` with an already existing  volume handle (for instance manually created [Longhorn](https://longhorn.io/) volume.)
 
 ## Configuration
 
@@ -17,7 +17,7 @@ volumes:
     size: # 400Gi
   # Name of storage class
     storageClassName: # longhorn-large
-    # Name of longhorn pre-created volume
+    # Name of Longhorn pre-created volume
     volumeHandle: # media-storage
     # List of volume access modes
     accessModes: []
