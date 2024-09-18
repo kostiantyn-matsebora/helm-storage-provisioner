@@ -1,4 +1,4 @@
-# Storage provisioner chart
+# Storage provisioner
 
 Helm chart for provisioning storage definition (PersistentVolumeClaim and PersistentVolume objects).
 
