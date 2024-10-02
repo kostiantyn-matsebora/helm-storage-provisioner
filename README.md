@@ -51,3 +51,33 @@ volumes:
   storageClassName: longhorn-fast
   volumeHandle: jellyfin-cache
 ```
+
+## Usage
+
+Add helm [repository](https://kostiantyn-matsebora.github.io/helm-charts/) first:
+
+```bash
+helm repo add kostiantyn-matsebora https://kostiantyn-matsebora.github.io/helm-charts/
+```
+
+Install/upgrade helm chart using your custom values (for instance storage-provisioner):
+
+```bash
+
+# oauth2-proxy
+helm upgrade storage kostiantyn-matsebora/storage-provisioner --install --values ./custom-values.yaml
+
+```
+
+## Contributing
+
+If you experience any issues, have a question or a suggestion, or if you wish
+to contribute, feel free to [open an issue][issues] or
+[start a discussion][discussions].
+
+[issues]: https://github.com/kostiantyn-matsebora/oauth2-proxy-simple/issues
+[discussions]: https://github.com/kostiantyn-matsebora/oauth2-proxy-simple/discussions
+
+## License
+
+[`MIT License`](../LICENSE)
