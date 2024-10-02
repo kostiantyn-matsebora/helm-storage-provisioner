@@ -1,5 +1,7 @@
 # Storage provisioner
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kostiantyn-matsebora_helm-storage-provisioner&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kostiantyn-matsebora_helm-storage-provisioner)
+
 Helm chart for provisioning storage definition (PersistentVolumeClaim and PersistentVolume objects).
 
 Can be useful in the following cases:
